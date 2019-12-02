@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lwrot.github.io/"/>
-  <updated>2019-12-02T09:05:08.306Z</updated>
+  <updated>2019-12-02T11:59:26.601Z</updated>
   <id>http://lwrot.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>hexo的技巧</title>
+    <link href="http://lwrot.github.io/2019/12/02/page2/"/>
+    <id>http://lwrot.github.io/2019/12/02/page2/</id>
+    <published>2019-12-02T11:55:35.000Z</published>
+    <updated>2019-12-02T11:59:26.601Z</updated>
+    
+    <content type="html"><![CDATA[<p>这只是个测试</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这只是个测试&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="技巧" scheme="http://lwrot.github.io/categories/%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="Hexo" scheme="http://lwrot.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>我的第一个小技巧</title>
     <link href="http://lwrot.github.io/2019/12/02/tips1/"/>
     <id>http://lwrot.github.io/2019/12/02/tips1/</id>
     <published>2019-12-02T07:11:14.000Z</published>
-    <updated>2019-12-02T09:05:08.306Z</updated>
+    <updated>2019-12-02T12:03:31.587Z</updated>
     
     <content type="html"><![CDATA[<p>Mac下如何更改软件图标的小tips</p><h4 id="生成ICNS图标文件"><a href="#生成ICNS图标文件" class="headerlink" title="生成ICNS图标文件"></a>生成ICNS图标文件</h4><p>由于Mac应用只支持icns的图标，网上图片基本上是png格式的。步骤如下：</p><p>创建一个icons.iconset的文件夹，用来放置生成的图标</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mkdir icons.iconset</span></pre></td></tr></table></figure><p>然后执行命令，生成512x512大小尺寸的png图标，用来后面生成icns图标</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sips -z 512 512   pic.png --out icons.iconset&#x2F;icon_512x512.png</span></pre></td></tr></table></figure><p>最后执行👇命令，生成icns图标</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">iconutil -c icns icons.iconset -o Icon.icns</span></pre></td></tr></table></figure><h4 id="手动替换图标"><a href="#手动替换图标" class="headerlink" title="手动替换图标"></a>手动替换图标</h4><p>打开应用文件目录，找到要替换的应用程序，右键显示简介，将ICNS图标直接丢到简介页面直接进行替换</p><p><img src="https://i.imgur.com/gTZADNW.png" alt=""></p><p>So easy！！！</p>]]></content>
     
@@ -50,7 +77,7 @@
     <link href="http://lwrot.github.io/2019/12/01/Page1/"/>
     <id>http://lwrot.github.io/2019/12/01/Page1/</id>
     <published>2019-12-01T04:00:00.000Z</published>
-    <updated>2019-12-02T09:08:13.949Z</updated>
+    <updated>2019-12-02T12:02:43.311Z</updated>
     
     <content type="html"><![CDATA[<p>Homeblew可以说是最重要的Mac工具之一了，快速安装卸载软件搭建编程环境不要太好用，多说无用直接进入主题</p><h3 id="官网命令行安装"><a href="#官网命令行安装" class="headerlink" title="官网命令行安装"></a>官网命令行安装</h3><p>Mac系统自带ruby环境支持，不过可以先开始检查下，看是否以及安装好了ruby</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ruby -v</span></pre></td></tr></table></figure><p>确认安装好ruby后，进入<a href="https://brew.sh/index_zh-cn.html" target="_blank" rel="noopener">Homebrew</a>官网，复制命令行并输入：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;bin&#x2F;ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install)&quot;</span></pre></td></tr></table></figure><p>上面命令行的意思就是：先用命令curl，将文件下载本地，文件名为<code>install</code>，文件地址：<a href="https://raw.githubusercontent.com/Homebrew/install/master/install" target="_blank" rel="noopener">https://raw.githubusercontent.com/Homebrew/install/master/install</a>, 再执行<code>ruby -e</code>去安装<code>install</code>文件。</p><p>然后就是静静等待脚本自动安装，现在的你可以去享受一杯☕️了。</p><p>由于众所周知的原因，Homeblew的库在国外，你的安装可能会遇到网络的问题，下面只有用第三方的源来替代官方源来解决这个问题了。</p><h3 id="替换官方源"><a href="#替换官方源" class="headerlink" title="替换官方源"></a>替换官方源</h3><p>先将<code>install</code>文件下载下来，用vi命令打开，将里面的官方源</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">HOMEBREW_REPO &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;Homebrew&#x2F;homebrew&#39;</span></pre></td></tr></table></figure><p>替换为中科大的源（比较推荐）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">HOMEBREW_REPO &#x3D; &#39;git:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;homebrew.git&#39;</span></pre></td></tr></table></figure><p>然后在<code>install</code>的文件目录下执行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ruby install</span></pre></td></tr></table></figure><p>安装成功后，执行下面的命令，进行自我检测</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">brew docter</span></pre></td></tr></table></figure><p>如果要回到原来的官方源也很简单，执行下面的命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git -C &quot;&#x2F;usr&#x2F;local&#x2F;Homebrew&#x2F;Library&#x2F;Taps&#x2F;homebrew&#x2F;homebrew-core&quot; remote set-url origin https:&#x2F;&#x2F;github.com&#x2F;Homebrew&#x2F;homebrew-core.git</span></pre></td></tr></table></figure><p>安装好了Homebrew后就是可以放飞自我，自在的安装各种软件了</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">brew install xxx</span></pre></td></tr></table></figure><p>卸载软件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">brew uninstall xxx</span></pre></td></tr></table></figure><p>查看安装了什么软件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">brew list</span></pre></td></tr></table></figure><p>查找安装软件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">brew  search xxx</span></pre></td></tr></table></figure><h3 id="安装Cakebrew来管理brew源和下载软件"><a href="#安装Cakebrew来管理brew源和下载软件" class="headerlink" title="安装Cakebrew来管理brew源和下载软件"></a>安装Cakebrew来管理brew源和下载软件</h3><p>可以到<a href="https://www.cakebrew.com" target="_blank" rel="noopener">Cakebrew</a>开发者网站直接下载安装，也可以使用Homeblew安装</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">brew cask install cakebrew</span></pre></td></tr></table></figure><p>cakebrew是图形界面的管理工具，比较简单和容易管理，推荐安装。以上</p>]]></content>
     
@@ -68,9 +95,9 @@
       <category term="Mac工具" scheme="http://lwrot.github.io/categories/Mac%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Homeblew" scheme="http://lwrot.github.io/tags/Homeblew/"/>
-    
       <category term="Mac" scheme="http://lwrot.github.io/tags/Mac/"/>
+    
+      <category term="Homeblew" scheme="http://lwrot.github.io/tags/Homeblew/"/>
     
   </entry>
   
@@ -79,7 +106,7 @@
     <link href="http://lwrot.github.io/2019/12/01/hello-world/"/>
     <id>http://lwrot.github.io/2019/12/01/hello-world/</id>
     <published>2019-11-30T16:00:00.000Z</published>
-    <updated>2019-12-02T09:03:19.143Z</updated>
+    <updated>2019-12-02T12:03:10.002Z</updated>
     
     <content type="html"><![CDATA[<p>This is felix，Welcome to <a href="https://lwrot.github.io/">MYSite</a> ! </p><p>这个网站主要分享自己的学习心的和一些小的有趣的知识，也许很无聊，也许很无所谓，希望能坚持下去，将小的知识汇聚成海洋。</p><p>可还行</p><p>未完待续……</p><p><img src="https://i.imgur.com/Y5zmVwT.jpg" alt=""></p>]]></content>
     
