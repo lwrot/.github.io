@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://leanpyth.club/"/>
-  <updated>2019-11-28T07:30:19.739Z</updated>
+  <updated>2019-12-02T06:12:59.234Z</updated>
   <id>http://leanpyth.club/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的第一个工具Homeblew</title>
+    <link href="http://leanpyth.club/2019/11/28/Page1/"/>
+    <id>http://leanpyth.club/2019/11/28/Page1/</id>
+    <published>2019-11-28T14:09:16.000Z</published>
+    <updated>2019-12-02T06:12:59.234Z</updated>
+    
+    <content type="html"><![CDATA[<p>Homeblew可以说是最重要的Mac工具之一了，快速安装卸载软件搭建编程环境不要太好用，多说无用直接进入主题</p><h3 id="官网命令行安装"><a href="#官网命令行安装" class="headerlink" title="官网命令行安装"></a>官网命令行安装</h3><p>Mac系统自带ruby环境支持，不过可以先开始检查下，看是否以及安装好了ruby</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ruby -v</span></pre></td></tr></table></figure><p>确认安装好ruby后，进入<a href="https://brew.sh/index_zh-cn.html" target="_blank" rel="noopener">Homebrew</a>官网，复制命令行并输入：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;bin&#x2F;ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install)&quot;</span></pre></td></tr></table></figure><p>上面命令行的意思就是：先用命令curl，将文件下载本地，文件名为<code>install</code>，文件地址：<a href="https://raw.githubusercontent.com/Homebrew/install/master/install，再执行" target="_blank" rel="noopener">https://raw.githubusercontent.com/Homebrew/install/master/install，再执行</a> ruby -e  去安装<code>install</code>文件。</p><p>然后就是静静等待脚本自动安装，现在的你可以去享受一杯☕️了。</p><p>由于众所周知的原因，Homeblew的库在国外，你的安装可能会遇到网络的问题，下面只有用第三方的源来替代官方源来解决这个问题了。</p><h3 id="替换官方源"><a href="#替换官方源" class="headerlink" title="替换官方源"></a>替换官方源</h3><p>先将<code>install</code>文件下载下来，用vi命令打开，将里面的官方源</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">HOMEBREW_REPO &#x3D; &#39;https:&#x2F;&#x2F;github.com&#x2F;Homebrew&#x2F;homebrew&#39;</span></pre></td></tr></table></figure><p>替换为中科大的源（比较推荐）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">HOMEBREW_REPO &#x3D; &#39;git:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;homebrew.git&#39;</span></pre></td></tr></table></figure><p>然后在<code>install</code>的文件目录下执行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ruby install</span></pre></td></tr></table></figure><p>安装成功后，执行下面的命令，进行自我检测</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">brew docter</span></pre></td></tr></table></figure><p>如果要回到原来的官方源也很简单，执行下面的命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git -C &quot;&#x2F;usr&#x2F;local&#x2F;Homebrew&#x2F;Library&#x2F;Taps&#x2F;homebrew&#x2F;homebrew-core&quot; remote set-url origin https:&#x2F;&#x2F;github.com&#x2F;Homebrew&#x2F;homebrew-core.git</span></pre></td></tr></table></figure><p>安装好了Homebrew后就是可以放飞自我，自在的安装各种软件了</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">brew install xxx</span></pre></td></tr></table></figure><p>卸载软件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">brew uninstall xxx</span></pre></td></tr></table></figure><p>查看安装了什么软件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">brew list</span></pre></td></tr></table></figure><h3 id="安装Cakebrew来管理brew源和下载软件"><a href="#安装Cakebrew来管理brew源和下载软件" class="headerlink" title="安装Cakebrew来管理brew源和下载软件"></a>安装Cakebrew来管理brew源和下载软件</h3><p>可以到<a href="https://www.cakebrew.com" target="_blank" rel="noopener">Cakebrew</a>开发者网站直接下载安装，也可以使用Homeblew安装</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">brew cask install cakebrew</span></pre></td></tr></table></figure><p>cakebrew是图形界面的管理工具，比较简单和容易管理，推荐安装。以上</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Homeblew可以说是最重要的Mac工具之一了，快速安装卸载软件搭建编程环境不要太好用，多说无用直接进入主题&lt;/p&gt;
+&lt;h3 id=&quot;官网命令行安装&quot;&gt;&lt;a href=&quot;#官网命令行安装&quot; class=&quot;headerlink&quot; title=&quot;官网命令行安装&quot;&gt;&lt;/a&gt;官网
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Homeblew" scheme="http://leanpyth.club/tags/Homeblew/"/>
+    
+  </entry>
   
   <entry>
     <title>test</title>
