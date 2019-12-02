@@ -42,29 +42,6 @@
   </entry>
   
   <entry>
-    <title>test</title>
-    <link href="http://leanpyth.club/2019/11/28/test/"/>
-    <id>http://leanpyth.club/2019/11/28/test/</id>
-    <published>2019-11-28T07:25:59.000Z</published>
-    <updated>2019-11-28T07:30:19.739Z</updated>
-    
-    <content type="html"><![CDATA[<p>This is a new post by hexo</p><h2 id="the-second-title"><a href="#the-second-title" class="headerlink" title="the second title"></a>the second title</h2><h3 id="the-third-title"><a href="#the-third-title" class="headerlink" title="the third title"></a>the third title</h3>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;This is a new post by hexo&lt;/p&gt;
-&lt;h2 id=&quot;the-second-title&quot;&gt;&lt;a href=&quot;#the-second-title&quot; class=&quot;headerlink&quot; title=&quot;the second title&quot;&gt;&lt;/a&gt;the 
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>Hello World</title>
     <link href="http://leanpyth.club/2019/11/28/hello-world/"/>
     <id>http://leanpyth.club/2019/11/28/hello-world/</id>
