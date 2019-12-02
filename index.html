@@ -169,6 +169,75 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://leanpyth.club/2019/12/02/tips1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lwrot">
+      <meta itemprop="description" content="跟着时光学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="游标卡尺的工具库">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/02/tips1/" class="post-title-link" itemprop="url">我的第一个小技巧</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-12-02 15:11:14 / Modified: 15:27:23" itemprop="dateCreated datePublished" datetime="2019-12-02T15:11:14+08:00">2019-12-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Mac下如何更改软件图标的小tips</p>
+<h4 id="生成ICNS图标文件"><a href="#生成ICNS图标文件" class="headerlink" title="生成ICNS图标文件"></a>生成ICNS图标文件</h4><p>由于Mac应用只支持icns的图标，网上图片基本上是png格式的。步骤如下：</p>
+<p>创建一个icons.iconset的文件夹，用来放置生成的图标</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mkdir icons.iconset</span></pre></td></tr></table></figure>
+<p>然后执行命令，生成512x512大小尺寸的png图标，用来后面生成icns图标</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sips -z 512 512   pic.png --out icons.iconset&#x2F;icon_512x512.png</span></pre></td></tr></table></figure>
+<p>最后执行👇命令，生成icns图标</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">iconutil -c icns icons.iconset -o Icon.icns</span></pre></td></tr></table></figure>
+<h4 id="手动替换图标"><a href="#手动替换图标" class="headerlink" title="手动替换图标"></a>手动替换图标</h4><p>打开应用文件目录，找到要替换的应用程序，右键显示简介，将ICNS图标直接丢到简介页面直接进行替换</p>
+<p><img src="https://i.imgur.com/gTZADNW.png" alt=""></p>
+<p>So easy！！！</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://leanpyth.club/2019/11/28/Page1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -200,7 +269,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-02 14:50:17" itemprop="dateModified" datetime="2019-12-02T14:50:17+08:00">2019-12-02</time>
+                <time title="Modified: 2019-12-02 14:53:13" itemprop="dateModified" datetime="2019-12-02T14:53:13+08:00">2019-12-02</time>
               </span>
 
           
@@ -219,7 +288,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ruby -v</span></pre></td></tr></table></figure>
 <p>确认安装好ruby后，进入<a href="https://brew.sh/index_zh-cn.html" target="_blank" rel="noopener">Homebrew</a>官网，复制命令行并输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;bin&#x2F;ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install)&quot;</span></pre></td></tr></table></figure>
-<p>上面命令行的意思就是：先用命令curl，将文件下载本地，文件名为<code>install</code>，文件地址：<a href="https://raw.githubusercontent.com/Homebrew/install/master/install，再执行`ruby" target="_blank" rel="noopener">https://raw.githubusercontent.com/Homebrew/install/master/install，再执行`ruby</a> -e<code>去安装</code>install`文件。</p>
+<p>上面命令行的意思就是：先用命令curl，将文件下载本地，文件名为<code>install</code>，文件地址：<a href="https://raw.githubusercontent.com/Homebrew/install/master/install" target="_blank" rel="noopener">https://raw.githubusercontent.com/Homebrew/install/master/install</a>, 再执行<code>ruby -e</code>去安装<code>install</code>文件。</p>
 <p>然后就是静静等待脚本自动安装，现在的你可以去享受一杯☕️了。</p>
 <p>由于众所周知的原因，Homeblew的库在国外，你的安装可能会遇到网络的问题，下面只有用第三方的源来替代官方源来解决这个问题了。</p>
 <h3 id="替换官方源"><a href="#替换官方源" class="headerlink" title="替换官方源"></a>替换官方源</h3><p>先将<code>install</code>文件下载下来，用vi命令打开，将里面的官方源</p>
@@ -288,6 +357,13 @@
 
               <time title="Created: 2019-11-28 14:53:37" itemprop="dateCreated datePublished" datetime="2019-11-28T14:53:37+08:00">2019-11-28</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-02 15:10:20" itemprop="dateModified" datetime="2019-12-02T15:10:20+08:00">2019-12-02</time>
+              </span>
 
           
 
@@ -300,19 +376,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo server</span></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo generate</span></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+          <p>This is felix，Welcome to <a href="https://lwrot.github.io/" target="_blank" rel="noopener">MYSite</a> ! </p>
+<p>这个网站主要分享自己的学习心的和一些小的有趣的知识，也许很无聊，也许很无所谓，希望能坚持下去，将小的知识汇聚成海洋。</p>
+<p>可还行</p>
+<p>未完待续……</p>
+<p><img src="https://i.imgur.com/Y5zmVwT.jpg" alt=""></p>
 
       
     </div>
@@ -373,12 +441,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
