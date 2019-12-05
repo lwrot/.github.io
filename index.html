@@ -40,7 +40,7 @@
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
     localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
@@ -181,7 +181,7 @@
     <link itemprop="mainEntityOfPage" href="http://lwrot.github.io/2019/12/02/tips1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="lwrot">
       <meta itemprop="description" content="跟着时光学习">
     </span>
@@ -267,7 +267,7 @@
     <link itemprop="mainEntityOfPage" href="http://lwrot.github.io/2019/12/01/Page1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="lwrot">
       <meta itemprop="description" content="跟着时光学习">
     </span>
@@ -371,7 +371,7 @@
     <link itemprop="mainEntityOfPage" href="http://lwrot.github.io/2019/12/01/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="lwrot">
       <meta itemprop="description" content="跟着时光学习">
     </span>
@@ -481,6 +481,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="lwrot"
+      src="/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">lwrot</p>
   <div class="site-description" itemprop="description">跟着时光学习</div>
 </div>
