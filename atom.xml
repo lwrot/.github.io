@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lwrot.github.io/"/>
-  <updated>2019-12-02T11:59:26.601Z</updated>
+  <updated>2019-12-05T03:15:00.767Z</updated>
   <id>http://lwrot.github.io/</id>
   
   <author>
@@ -15,33 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>hexo的技巧</title>
-    <link href="http://lwrot.github.io/2019/12/02/page2/"/>
-    <id>http://lwrot.github.io/2019/12/02/page2/</id>
-    <published>2019-12-02T11:55:35.000Z</published>
-    <updated>2019-12-02T11:59:26.601Z</updated>
-    
-    <content type="html"><![CDATA[<p>这只是个测试</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;这只是个测试&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="技巧" scheme="http://lwrot.github.io/categories/%E6%8A%80%E5%B7%A7/"/>
-    
-    
-      <category term="Hexo" scheme="http://lwrot.github.io/tags/Hexo/"/>
-    
-  </entry>
   
   <entry>
     <title>我的第一个小技巧</title>
@@ -95,9 +68,9 @@
       <category term="Mac工具" scheme="http://lwrot.github.io/categories/Mac%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Mac" scheme="http://lwrot.github.io/tags/Mac/"/>
-    
       <category term="Homeblew" scheme="http://lwrot.github.io/tags/Homeblew/"/>
+    
+      <category term="Mac" scheme="http://lwrot.github.io/tags/Mac/"/>
     
   </entry>
   
