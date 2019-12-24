@@ -1,6 +1,389 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>我的第二个工具VIM</title>
+    <url>/2019/12/06/page3/</url>
+    <content><![CDATA[<p>如果你要和Linux打交道，我觉得Vim/Vi是必须要熟练掌握的一门手艺，不论Vim的其他优点。虽然Vim对于初学者十分的不友好，可是等真正掌握了之后，你会喜欢上vim下的自由和离开鼠标干扰的自在.</p>
+<h2 id="Vim的基础知识"><a href="#Vim的基础知识" class="headerlink" title="Vim的基础知识"></a>Vim的基础知识</h2><p>vim对应命令键盘图<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1ga7npkfdn0g30sg0k40w3.gif" alt=""></p>
+<h3 id="四种模式"><a href="#四种模式" class="headerlink" title="四种模式"></a>四种模式</h3><h4 id="正常模式NORMAL"><a href="#正常模式NORMAL" class="headerlink" title="正常模式NORMAL"></a>正常模式<code>NORMAL</code></h4><p>正常模式下，可以移动光标，删除行列或者字符,查询字符</p>
+<table>
+   <tr>
+        <td colspan=2 bgcolor=#999999>正常模式</td>
+   </tr> 
+   <tr>
+        <td width=1%>h或者向左箭头⬅️</td>
+        <td width=90%>光标向左移动一个字符</td>
+   </tr>
+   <tr>
+         <td>j或者向下箭头⬇️</td>
+        <td>光标向下移动一个字符</td>
+   <tr>
+        <td>k或者向上箭头⬆️</td>
+        <td>光标向上移动一个字符</td>
+   </tr>
+   <tr>
+         <td>l或者向右箭头➡️</td>
+        <td>光标向右移动一个字符</td>
+   </tr>
+   <tr>
+        <td colspan=2> 可以使用数字键搭配hjkl的组合键来移动光标到想到的位置，比如向上移动20行，可以输入“20k”来完成</td>
+   </tr>  
+   <tr>
+        <td>ngg或者nG</td>
+        <td>跳转到第n行</td>
+   </tr>
+   <tr>
+        <td>gg</td>
+        <td>移动到文档的第一个字符</td>
+   </tr>
+   <tr>
+         <td>G</td>
+        <td>移动到文档的最后一行</td>
+   </tr>
+   <tr>
+        <td>$</td>
+        <td>移动到这一行的最后一个字符</td>
+   </tr>
+   <tr>
+         <td>0</td>
+         <td>移动到所在行的第一个字符</td>
+   </tr>
+   <tr>
+        <td>n+Enter</td>
+        <td>光标向下移动n行</td>
+   </tr>
+   <tr>
+        <td>n+空格键</td>
+        <td>光标向右移动n个字符</td>
+   </tr>
+   <tr>
+        <td colspan=2 bgcolor=#999999>复制黏贴删除</td>
+   </tr> 
+   <tr>
+        <td>yy</td>
+        <td>复制光标所在那一行</td>
+   <tr>
+        <td>nyy</td>
+        <td>复制光标所在的向下n行</td>
+   </tr>
+   <tr>
+        <td>y0</td>
+        <td>复制光标所在字符到本行行首</td>
+   <tr>
+        <td>y$</td>
+        <td>复制光标所在字符到本行行尾</td>
+   </tr>
+   <tr>
+        <td>yG</td>
+        <td>复制光标所在行到最后一行</td>
+   <tr>
+        <td>y1G</td>
+        <td>复制光标所在行到第一行</td>
+   </tr>
+   <tr>
+        <td>p（小写）</td>
+        <td>将复制内容在光标下一行进行粘贴</td>
+   <tr>
+        <td>P（大写）</td>
+        <td>将复制内容在光标上一行进行粘贴</td>
+   </tr>
+   <tr>
+        <td>x（小写）</td>
+        <td>删除光标当前所在位置字符</td>
+   </tr>
+   <tr>
+        <td>X（大写）</td>
+        <td>删除光标当前位置前一个字符</td>
+   </tr>
+   <tr>
+        <td>nx</td>
+        <td>向后删除n个字符</td>
+   </tr>
+   <tr>
+        <td>dd</td>
+        <td>删除光标所在行</td>
+   <tr>
+        <td>ndd</td>
+        <td>删除光标当前位置向下n行</td>
+   </tr>
+   <tr>
+        <td>d0</td>
+        <td>删除光标所在字符到本行行首</td>
+   <tr>
+        <td>d$</td>
+        <td>删除光标所在字符到本行行尾</td>
+   </tr>
+   <tr>
+        <td>dG</td>
+        <td>删除光标所在行到最后一行</td>
+   <tr>
+        <td>d1G</td>
+        <td>删除光标所在行到第一行</td>
+   </tr>
+   <tr>
+        <td>u</td>
+        <td>撤销前一个操作</td>
+   </tr>
+   <tr>
+        <td>[Ctrl]+r</td>
+        <td>回退上一个操作之前的状态</td>
+   </tr>
+   <tr>
+        <td>.</td>
+        <td>重复前一个动作</td>
+   </tr>
+   <tr>
+        <td colspan=2 bgcolor=#999999>搜索和替换</td>
+   </tr>
+   <tr>
+        <td>/+字符串</td>
+        <td>向下搜索字符串</td>
+   </tr>
+   <tr>
+        <td>?+字符串</td>
+        <td>向上搜索字符串</td>
+   </tr>
+   <tr>
+        <td>n</td>
+        <td>重复上面的搜索动作，刚执行完“/+字符串”的动作后，会向下继续搜索这个字符串</td>
+   </tr>
+   <tr>
+        <td>N</td>
+        <td>与n相反，向上继续搜索这个字符</td>
+   </tr>
+   <tr>
+        <td>:n1,n2s/word1/word2/g</td>
+        <td>在n1，n2行之间搜索world1字符串，并替代为world2</td>
+   </tr>
+   <tr>
+        <td>:1,$s/word1/word2/g</td>
+        <td>从第一行到最后一行之间搜索world1字符串并替代为world2</td>
+   </tr>
+   <tr>
+        <td>:1,$s/word1/word2/gc</td>
+        <td>从第一行到最后一行之间搜索world1字符串并替代为world2，取代前提示用户确认</td>
+   </tr>
+</table>
+
+
+<h4 id="插入模式INSERT"><a href="#插入模式INSERT" class="headerlink" title="插入模式INSERT"></a>插入模式<code>INSERT</code></h4><table>
+   <tr>
+        <td colspan=2 bgcolor=#999999>进入插入模式</td>
+   </tr> 
+   <tr>
+        <td width=1%>i</td>
+        <td width=90%>从目前光标所在的字符开始输入</td>
+   </tr>
+   <tr>
+         <td>I</td>
+        <td>从目前光标所在行的第一个非空字符开始输入</td>
+   <tr>
+        <td>a</td>
+        <td>从目前光标所在的下一个字符开始输入</td>
+   </tr>
+   <tr>
+         <td>A</td>
+        <td>从目前光标所在行位置的最后一个字符处开始输入</td>
+   </tr>
+   <tr>
+        <td>o</td>
+        <td>在目前光标所在位置的下一行开始输入新的一行</td>
+   </tr>
+   <tr>
+         <td>O</td>
+        <td>在目前光标所在位置的上一行开始输入新的一行</td>
+   </tr>
+   <tr>
+        <td colspan=2 bgcolor=#999999>进入替换模式</td>
+   </tr>  
+  <tr>
+        <td>r</td>
+        <td>只会取代光标所在的那一个字符一次</td>
+   </tr>
+   <tr>
+         <td>R</td>
+        <td>会一直取代光标所在字符，直到按下键为止</td>
+   </tr>
+</table>
+
+
+
+<h4 id="可视模式VISUAL"><a href="#可视模式VISUAL" class="headerlink" title="可视模式VISUAL"></a>可视模式<code>VISUAL</code></h4><p>可视模式可以用来选择文本,并进行批量处理</p>
+<table>
+   <tr>
+        <td colspan=2 bgcolor=#999999>进入可视模式</td>
+   </tr> 
+   <tr>
+        <td width=1%>v(小写)</td>
+        <td width=90%>逐个字符进行文本选择</td>
+   </tr>
+   <tr>
+         <td>V(大写)</td>
+        <td>逐行进行文本选择</td>
+   <tr>
+        <td>[Ctrl]+v</td>
+        <td>按照文本块的方式进行文本选择</td>
+   </tr>
+   <tr>
+        <td colspan=2 >可以在选中的区域进行模式切换，例如行文本模式中输入v转为字符模式/输入[Ctrl]+v转为文本块模式</td>
+   </tr>
+   <tr>
+        <td colspan=2 bgcolor=#99999>对选中对区域进行操作</td>
+   </tr> 
+   <tr>
+        <td width=1%>d</td>
+        <td width=90%>删除选中的文本</td>
+   </tr>
+   <tr>
+         <td>c</td>
+        <td>修改选中的文本</td>
+   <tr>
+        <td>r</td>
+        <td>替换选中的文本</td>
+   </tr>
+   <tr>
+         <td>I</td>
+        <td>在选中的文本前插入</td>
+   </tr>
+   <tr>
+         <td>A</td>
+        <td>在选中的文本后插入</td>
+   <tr>
+        <td>gu</td>
+        <td>选中的区域转为小写</td>
+   </tr>
+   <tr>
+        <td>gU</td>
+        <td>选中的区域转为大写</td>
+   </tr>
+   <tr>
+         <td>g~</td>
+        <td>大小写互换</td>
+   <tr>
+        <td>></td>
+        <td>向右锁进一个字符</td>
+   </tr>
+   <tr>
+         <td><</td>
+        <td>向左锁进一个字符</td>
+</table>
+
+<h4 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h4><p>命令行模式是在<code>正常模式</code>下对文档进行的整体配置和操作</p>
+<table>
+   <tr>
+        <td colspan=2 bgcolor=#999999>相关指令</td>
+   </tr> 
+   <tr>
+        <td width=1%>:w</td>
+        <td width=90%>保存写入文档</td>
+   </tr>
+   <tr>
+         <td>:w!</td>
+        <td>强制写入</td>
+   <tr>
+        <td>:q</td>
+        <td>退出文档</td>
+   </tr>
+   <tr>
+        <td>:q!</td>
+        <td>退出文档不
+   </tr>
+   <tr>
+         <td>:wq</td>
+        <td>保存退出文档，：wq！则为强制保存退出文档</td>
+   <tr>
+        <td>zz</td>
+        <td>若文档没有更改则不保存并退出，若文档变更了，则存储后退出</td>
+   </tr>
+   <tr>
+         <td>I</td>
+        <td>在选中的文本前插入</td>
+   </tr>
+   <tr>
+         <td>:w [filename]</td>
+        <td>另存为一个filename命名的文档</td>
+   <tr>
+        <td>:n1,n2[filename]/td>
+        <td>将n1到n2行的内容存储到filename的这个文档</td>
+   </tr>
+   <tr>
+        <td>:!+command</td>
+        <td>在vi中查看执行commnad命令的结果，例如:!ls /home 可以在vi中查看/home下输入文档信息</td>
+   </tr>
+</table>
+
+<p>在命令行模式中，还可以对vim的配置进行操作，例如<code>:set nu</code>,可以显示行号，在每一行前显示该行的行号。而为了方便和管理，我们通常在.vimrc文件中设置vim配置。</p>
+<h2 id="配置-vimrc文件"><a href="#配置-vimrc文件" class="headerlink" title="配置.vimrc文件"></a>配置.vimrc文件</h2><p>对。vimrc文件进行配置，可以方便我们操作，搭建成适合自己的编辑器。</p>
+<h3 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h3><p>显示行号</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set number</span></pre></td></tr></table></figure>
+<p>显示标尺</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set ruler</span></pre></td></tr></table></figure>
+<p>历史纪录<br> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set history&#x3D;1000</span></pre></td></tr></table></figure><br>显示命令行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set showcmd</span></pre></td></tr></table></figure>
+<p>显示状态行的内容</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set statusline&#x3D;%F%m%r%h%w\ [FORMAT&#x3D;%&#123;&amp;ff&#125;]\ [TYPE&#x3D;%Y]\ [POS&#x3D;%l,%v][%p%%]\ %&#123;strftime(\&quot;%d&#x2F;%m&#x2F;%y\ -\ %H:%M\&quot;)&#125;</span></pre></td></tr></table></figure>
+<p>启动显示状态行1，总是显示状态行2</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set laststatus&#x3D;2</span></pre></td></tr></table></figure>
+<p>语法高亮显示</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">syntax on</span></pre></td></tr><tr><td class="code"><pre><span class="line">set fileencodings&#x3D;utf-8,gb2312,gbk,cp936,latin-1</span></pre></td></tr><tr><td class="code"><pre><span class="line">set fileencoding&#x3D;utf-8</span></pre></td></tr><tr><td class="code"><pre><span class="line">set termencoding&#x3D;utf-8</span></pre></td></tr><tr><td class="code"><pre><span class="line">set fileformat&#x3D;unix</span></pre></td></tr><tr><td class="code"><pre><span class="line">set encoding&#x3D;utf-8</span></pre></td></tr></table></figure>
+
+<p>去掉有关vi一致性模式，避免以前版本的一些bug和局限，解决backspace不能使用的问题</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set nocompatible</span></pre></td></tr><tr><td class="code"><pre><span class="line">set backspace&#x3D;indent,eol,start</span></pre></td></tr><tr><td class="code"><pre><span class="line">set backspace&#x3D;2</span></pre></td></tr></table></figure>
+<p>启用自动对齐功能，把上一行的对齐格式应用到下一行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set autoindent</span></pre></td></tr></table></figure>
+<p>去掉输入错误提示声音</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set noeb</span></pre></td></tr></table></figure>
+<p>自动保存</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set autowrite</span></pre></td></tr></table></figure>
+<p>突出显示当前行 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set cursorline</span></pre></td></tr></table></figure>
+<p>突出显示当前列</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set cursorcolumn</span></pre></td></tr></table></figure>
+<p>共享剪贴板</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set clipboard+&#x3D;unnamed</span></pre></td></tr></table></figure>
+<p>文件被改动时自动载入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set autoread</span></pre></td></tr></table></figure>
+<p>顶部底部保持3行距离</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set scrolloff&#x3D;3</span></pre></td></tr></table></figure>
+<h3 id="高级配置"><a href="#高级配置" class="headerlink" title="高级配置"></a>高级配置</h3><p>更换为自己习惯的快捷键方式，方便写入，存储，寻找，载入等操作</p>
+<h4 id="替换功能键"><a href="#替换功能键" class="headerlink" title="替换功能键"></a>替换功能键</h4><p>禁用s键，替换大写S键为保存 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">map s &lt;nop&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">map S :w&lt;CR&gt;</span></pre></td></tr></table></figure>
+<p>替换Q键为退出</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">map Q :q&lt;CR&gt;</span></pre></td></tr></table></figure>
+<p>用R键替换source当前vimrc文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">map R ：source $MYVIMRC&lt;CR&gt;</span></pre></td></tr></table></figure>
+<p>用空格代替tab</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set expandtab</span></pre></td></tr></table></figure>
+<h4 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h4><p>主要用了两个插件管理工具<code>Vundle</code>和<code>vim-plug</code></p>
+<h5 id="Vundle的安装"><a href="#Vundle的安装" class="headerlink" title="Vundle的安装"></a>Vundle的安装</h5><p>使用Vundle来管理插件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set nocompatible  &quot; be iMproved, required </span></pre></td></tr><tr><td class="code"><pre><span class="line">filetype off  &quot; required</span></pre></td></tr></table></figure>
+<p>启用vundle来管理vim插件 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set rtp+&#x3D;~&#x2F;.vim&#x2F;bundle&#x2F;Vundle.vim </span></pre></td></tr><tr><td class="code"><pre><span class="line">call vundle#begin() </span></pre></td></tr><tr><td class="code"><pre><span class="line">&quot;安装插件写在这之后</span></pre></td></tr><tr><td class="code"><pre><span class="line">Plugin &#39;VundleVim&#x2F;Vundle.vim&#39;</span></pre></td></tr><tr><td class="code"><pre><span class="line">Plugin &#39;scrooloose&#x2F;nerdtree&#39;</span></pre></td></tr><tr><td class="code"><pre><span class="line">Plugin &#39;yggdroot&#x2F;indentline&#39;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&quot;安装插件写在这之前 </span></pre></td></tr><tr><td class="code"><pre><span class="line">call vundle#end() &quot; required </span></pre></td></tr><tr><td class="code"><pre><span class="line">filetype plugin on &quot; required</span></pre></td></tr></table></figure>
+<p>几个常用的命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; :PluginList       - 查看已经安装的插件</span></pre></td></tr><tr><td class="code"><pre><span class="line">&quot; :PluginInstall    - 安装插件</span></pre></td></tr><tr><td class="code"><pre><span class="line">&quot; :PluginUpdate     - 更新插件</span></pre></td></tr><tr><td class="code"><pre><span class="line">&quot; :PluginSearch     - 搜索插件</span></pre></td></tr><tr><td class="code"><pre><span class="line">&quot; :PluginClean      - 删除插件，把安装插件对应行删除，然后执行这个命令即可</span></pre></td></tr></table></figure>
+<h5 id="vim-plug的安装"><a href="#vim-plug的安装" class="headerlink" title="vim-plug的安装"></a>vim-plug的安装</h5><p>vim-plug来管理安装插件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">call plug#begin(&#39;~&#x2F;.vim&#x2F;plugged&#39;)</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">&quot; 安装插件写在这之后</span></pre></td></tr><tr><td class="code"><pre><span class="line">&quot;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&quot; If you have nodejs and yarn</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">Plug &#39;iamcco&#x2F;markdown-preview.nvim&#39;, &#123; &#39;do&#39;: &#39;cd app &amp; yarn install&#39;  &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">&quot; 安装插件写在这之前</span></pre></td></tr><tr><td class="code"><pre><span class="line">&quot; Initialize plugin system</span></pre></td></tr><tr><td class="code"><pre><span class="line">call plug#end()</span></pre></td></tr></table></figure>
+<p>几个常用命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:PlugInstall      - 安装插件</span></pre></td></tr><tr><td class="code"><pre><span class="line">:PlugUpadte       - 更新插件</span></pre></td></tr><tr><td class="code"><pre><span class="line">:PlugStatus       - 查看安装插件情况</span></pre></td></tr></table></figure>
+<h4 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h4><p>推荐几个好看的主题</p>
+<h5 id="dracula"><a href="#dracula" class="headerlink" title="dracula"></a><a href="https://draculatheme.com/vim/" target="_blank" rel="noopener">dracula</a></h5><p><img src="https://draculatheme.com/assets/img/screenshots/vim.png" alt=""><br>个人比较喜欢的vim主题，确实有🧛‍♂️的魔力，在 <a href="https://draculatheme.com/vim/" target="_blank" rel="noopener">dracula</a>官网按照guide可以用vundle和vim-plug这两个之前介绍的插件进行安装。</p>
+<h6 id="如果是用"><a href="#如果是用" class="headerlink" title="如果是用"></a>如果是用</h6><h5 id="darcula"><a href="#darcula" class="headerlink" title="darcula"></a><a href="https://github.com/blueshirts/darcula" target="_blank" rel="noopener">darcula</a></h5><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1ga7ubp4tr0j30na0fq78b.jpg" alt=""></p>
+<p>将项目git clone到本地，将其中<code>darcula/colors/darcula.vim</code>拷贝到<code>~/.vim/colors</code>目录中，在<code>.vimrc</code>中设置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">colorscheme darcula</span></pre></td></tr></table></figure>
+
+<h5 id="Janah"><a href="#Janah" class="headerlink" title="Janah"></a><a href="https://github.com/mhinz/vim-janah" target="_blank" rel="noopener">Janah</a></h5><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1ga7uweu5m8j30na0fqgq4.jpg" alt=""></p>
+<p>和上面一样将项目git clone到本地，将其中<code>vim-janah/colors/janah.vim</code>拷贝到<code>~/.vim/colors</code>目录中，然后在<code>.vimrc</code>中添加</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">autocmd ColorSchmem janah highlight Normal ctermbg&#x3D;235</span></pre></td></tr><tr><td class="code"><pre><span class="line">colorscheme janah</span></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+        <tag>Vim</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我的第一个小技巧</title>
     <url>/2019/12/02/tips1/</url>
     <content><![CDATA[<p>Mac下如何更改软件图标的小tips</p>
@@ -60,8 +443,8 @@
         <category>Mac工具</category>
       </categories>
       <tags>
-        <tag>Homeblew</tag>
         <tag>Mac</tag>
+        <tag>Homeblew</tag>
       </tags>
   </entry>
   <entry>
